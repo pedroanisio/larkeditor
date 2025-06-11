@@ -1,8 +1,12 @@
 from setuptools import setup, find_packages
 
+# Read requirements from requirements.txt
+with open('requirements.txt') as f:
+    requirements = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+
 setup(
-    name='larkeditor',
-    version='0.1.3',
+    name='larkeditor-web',
+    version='2.0.0',
     packages=find_packages(),
     include_package_data=True,
 
@@ -10,25 +14,48 @@ setup(
     license='BSD 2-Clause License',
     author='Vlad Poletaev',
     author_email='poletaev.vladislav@gmail.com',
-    description='An editor for EBNF grammars, used by Lark – parsing library for Python',
+    description='Web-based EBNF grammar editor for Lark parsing library',
+    long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     classifiers=[
         "Development Status :: 4 - Beta",
-        "Environment :: X11 Applications :: GTK",
+        "Environment :: Web Environment",
+        "Framework :: FastAPI",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Natural Language :: English",
-        "Operating System :: POSIX :: Linux",
+        "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
-        "Topic :: Software Development"
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Topic :: Software Development",
+        "Topic :: Internet :: WWW/HTTP :: WSGI :: Application"
     ],
 
     entry_points={
-        "gui_scripts": [
-            "lark-editor = larkeditor.__main__:main"
+        "console_scripts": [
+            "larkeditor-web = app.main:main",
+            "larkeditor-dev = run_dev:main"
         ]
     },
 
-    install_requires=[
-        "lark-parser"
-    ]
+    install_requires=requirements,
+    python_requires='>=3.8',
+    
+    # Package data
+    package_data={
+        'app': [
+            'templates/*.html',
+            'static/**/*',
+        ],
+    },
+    
+    # Additional metadata
+    project_urls={
+        'Documentation': 'https://github.com/poletaevvlad/larkeditor',
+        'Source': 'https://github.com/poletaevvlad/larkeditor',
+        'Tracker': 'https://github.com/poletaevvlad/larkeditor/issues',
+    },
 )

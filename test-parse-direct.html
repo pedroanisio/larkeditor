@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Direct Parse Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        textarea { width: 100%; height: 150px; font-family: monospace; }
+        button { padding: 10px 20px; margin: 10px 0; }
+        .result { background: #f5f5f5; padding: 10px; margin: 10px 0; }
+        .error { background: #ffe6e6; color: #d8000c; }
+        .success { background: #e6ffe6; color: #4f8a10; }
+    </style>
+</head>
+<body>
+    <h1>Direct Parse API Test</h1>
+    
+    <h3>Grammar:</h3>
+    <textarea id="grammar" placeholder="start: expr
+expr: NUMBER
+%import common.NUMBER
+%import common.WS
+%ignore WS">start: expr
+expr: NUMBER
+%import common.NUMBER
+%import common.WS
+%ignore WS</textarea>
+    
+    <h3>Text to Parse:</h3>
+    <textarea id="text" placeholder="Enter text to parse">42</textarea>
+    
+    <button onclick="testParse()">Test Parse</button>
+    
+    <div id="result" class="result"></div>
+    
+    <script>
+    async function testParse() {
+        const grammar = document.getElementById('grammar').value;
+        const text = document.getElementById('text').value;
+        const resultDiv = document.getElementById('result');
+        
+        resultDiv.innerHTML = 'Parsing...';
+        resultDiv.className = 'result';
+        
+        try {
+            const response = await fetch('/api/parse', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    grammar: grammar,
+                    text: text,
+                    settings: {
+                        start_rule: 'start',
+                        parser: 'lalr',
+                        debug: false
+                    }
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok) {
+                resultDiv.innerHTML = `
+                    <strong>Success!</strong><br>
+                    Status: ${result.status}<br>
+                    Parse Time: ${(result.parse_time * 1000).toFixed(2)}ms<br>
+                    <br>
+                    <strong>Parse Tree:</strong><br>
+                    <pre>${JSON.stringify(result.tree, null, 2)}</pre>
+                `;
+                resultDiv.className = 'result success';
+            } else {
+                throw new Error(result.detail || 'Parse failed');
+            }
+            
+        } catch (error) {
+            resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            resultDiv.className = 'result error';
+        }
+    }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,417 @@
+# NSML - Neural Semantic Machine Language v1.0.0
+# Lark Grammar Specification
+# Auto-generated from symbol data structure - DO NOT EDIT MANUALLY
+# Generated on: 2025-06-10 13:24:23 UTC
+
+# ================================================================
+# DOCUMENT STRUCTURE
+# ================================================================
+
+// High priority separator to avoid conflicts with minus symbol  
+SEPARATOR.25: /---\r?\n/
+
+nsml_document: header_section SEPARATOR data_blocks SEPARATOR checksum?
+
+header_section: version_line namespace_declarations? symbol_definitions? entity_definitions? routing_data?
+
+version_line: NSML_START VERSION_NUMBER COLON crc_checksum NSML_END NEWLINE
+NSML_START.25: "[NSML:"
+NSML_END.25: "]"
+VERSION_NUMBER.20: /\d+\.\d+(\.\d+)?/
+CRC_CHECKSUM.18: /CRC[0-9A-Fa-f]+/
+crc_checksum: CRC_CHECKSUM
+
+# ================================================================
+# NAMESPACE SYSTEM
+# ================================================================
+
+namespace_declarations: "!ns{" namespace_mapping ("," namespace_mapping)* "}" NEWLINE
+namespace_mapping: namespace_prefix ":" domain_name ("=" domain_version)?
+namespace_prefix: NAMESPACE_SYMBOL
+domain_name: IDENTIFIER
+domain_version: VERSION_NUMBER
+
+# Namespace Prefixes
+NAMESPACE_SYMBOL: "⊨"    // Logic Domain
+            | "⌘"    // Computer Science
+            | "τ"    // Type Theory
+            | "⎇"    // User Experience
+            | "ψ"    // Psychology
+            | "φ"    // Philosophy
+            | "ℏ"    // Physics
+            | "𝔖"    // Set Theory
+            | "ℳ"    // Mathematics
+            | "♪"    // Music
+            | "⚛"    // Chemistry
+            | "⚕"    // Medicine
+            | "🏗"    // Core Project
+            | "🎨"    // Design System
+            | "📋"    // Project Management
+            | "🛠"    // Developer Experience
+            | "🗃"    // Data Governance
+            | "🚨"    // Operations
+            | "🧪"    // Quality Assurance
+            | "⚖️"    // Legal Compliance
+
+# ================================================================
+# SYMBOL DEFINITIONS
+# ================================================================
+
+symbol_definitions: SYM_START NEWLINE* symbol_mapping_list SYM_END NEWLINE
+SYM_START.30: "!sym{"
+SYM_END.30: "}"
+symbol_mapping_list: symbol_mapping ("," NEWLINE* symbol_mapping)* ","? NEWLINE*
+symbol_mapping: namespaced_symbol COLON semantic_identifier
+COLON.40: ":"
+namespaced_symbol: namespace_prefix? SYMBOL
+semantic_identifier: IDENTIFIER
+
+# ================================================================
+# ENTITY DEFINITIONS
+# ================================================================
+
+entity_definitions: "!ent{" NEWLINE* entity_mapping_list "}" NEWLINE
+entity_mapping_list: entity_mapping ("," NEWLINE* entity_mapping)* ","? NEWLINE*
+entity_mapping: entity_id COLON entity_name
+ENTITY_ID.40: /[A-Z][0-9A-Fa-f]+/
+entity_id: ENTITY_ID
+entity_name: /[^,}]+/
+
+routing_data: "!route{" route_entry ("," route_entry)* "}" NEWLINE
+route_entry: block_ref "⇝" block_ref  // Using unique routing symbol
+
+# ================================================================
+# DATA BLOCKS
+# ================================================================
+
+data_blocks: statement_line (NEWLINE statement_line)* NEWLINE?
+            | NEWLINE*  // Allow empty data blocks
+statement_line: semantic_statement+
+semantic_statement: "§" subject predicate_object+ confidence? temporal? context?
+
+subject: quantified_expression | compound_expression | entity_ref | inline_entity | boolean_literal | SYMBOL
+entity_ref: entity_id
+inline_entity: "[" entity_description "]"
+entity_description: /[^\]]+/
+
+quantified_expression: quantifier variable "∈" object
+QUANTIFIER.50: "∀" | "∃"
+quantifier: QUANTIFIER
+variable: IDENTIFIER
+
+
+
+predicate_object: operator object
+operator: namespaced_symbol
+object: entity_ref | literal | set_expression | compound_expression | typed_object | time_expression | SYMBOL
+
+# ================================================================
+# LITERALS AND VALUES
+# ================================================================
+
+literal: string_literal | numeric_literal | symbol_literal | boolean_literal | null_literal
+string_literal: ESCAPED_STRING
+numeric_literal: SIGNED_NUMBER
+symbol_literal: "'" namespaced_symbol "'"
+BOOLEAN_TRUE.45: "⊤"
+BOOLEAN_FALSE.45: "⊥"
+boolean_literal: BOOLEAN_TRUE | BOOLEAN_FALSE
+null_literal: "∅"
+
+# ================================================================
+# COMPOSITE OBJECTS
+# ================================================================
+
+set_expression: LBRACE object_list? RBRACE | STRUCT_LANGLE object_list? STRUCT_RANGLE
+LBRACE.25: "{"
+RBRACE.25: "}"
+STRUCT_LANGLE.25: "⟨"
+STRUCT_RANGLE.25: "⟩"
+object_list: object ("," object)*
+
+compound_expression: "(" operator object+ ")" | prefix_operator object | math_expression
+math_expression: SYMBOL SIGNED_NUMBER
+PREFIX_OPERATOR.40: "¬"
+prefix_operator: PREFIX_OPERATOR
+
+typed_object: object ":" type_expression
+type_expression: primitive_type | composite_type
+
+primitive_type: "Int" 
+              | "Float" 
+              | "String" 
+              | "Bool" 
+              | "Entity" 
+              | "Symbol" 
+              | "Time"
+
+composite_type: function_type | product_type | sum_type | set_type | list_type
+function_type: type_expression "τ⟶" type_expression  // Type arrow
+product_type: type_expression "τ⊠" type_expression  // Product type
+sum_type: type_expression "τ⊞" type_expression  // Sum type
+set_type: "Set" "[" type_expression "]"
+list_type: "List" "[" type_expression "]"
+
+# ================================================================
+# CONFIDENCE AND TEMPORAL
+# ================================================================
+
+confidence: "≈" CONFIDENCE_LEVEL
+CONFIDENCE_LEVEL.35: /[A-F0-9]/
+
+temporal: "∆" time_expression
+time_expression: compressed_timestamp | relative_time | time_range | duration | "(" time_expression ")"
+
+compressed_timestamp: year_marker month_marker? day_marker? time_marker? timezone_marker?
+YEAR_PATTERN.30: "◐" /\d{4}/
+year_marker: YEAR_PATTERN
+MONTH_PATTERN.30: "◑" /\d{2}/
+DAY_PATTERN.30: "◒" /\d{2}/
+month_marker: MONTH_PATTERN  
+day_marker: DAY_PATTERN
+time_marker: "◓" /\d{2}/ ":" /\d{2}/ (":" /\d{2}/)? ("." /\d{1,6}/)?
+timezone_marker: "◔" timezone_spec
+timezone_spec: ("+" | "-") /\d{2}/ ":" /\d{2}/ 
+              | "Z" 
+              | timezone_name
+timezone_name: /[a-zA-Z]{3,4}/
+
+relative_time: direction DIGIT+ time_unit relative_anchor?
+direction: "↑" | "↓"
+time_unit: "μs" 
+         | "ms" 
+         | "s" 
+         | "m" 
+         | "h" 
+         | "d" 
+         | "w" 
+         | "M" 
+         | "Y" 
+         | "decade" 
+         | "century"
+relative_anchor: "@" time_expression
+
+time_range: time_expression "⫷" time_expression  // Unique range operator
+
+duration: "⧖" DIGIT+ time_unit  // Duration symbol
+
+# ================================================================
+# CONTEXT AND METADATA
+# ================================================================
+
+context: "⌽" context_spec  // Context marker
+context_spec: confidence_context | source_context | domain_context
+
+confidence_context: "conf" ":" confidence_source
+source_context: "src" ":" source_identifier  
+domain_context: "dom" ":" namespace_prefix
+
+confidence_source: "measured" 
+                  | "estimated" 
+                  | "assumed" 
+                  | "calculated" 
+                  | "consensus"
+source_identifier: entity_ref | string_literal
+
+# ================================================================
+# MODAL AND COMPRESSION
+# ================================================================
+
+modal_prefix: modal_type ":"
+modal_type: "♪" 
+          | "♦" 
+          | "♠" 
+          | "♣" 
+          | "♥" 
+          | "♤"
+
+compression_marker: "¤" compression_type "{" compressed_data "}"
+compression_type: "b85" 
+                | "rle" 
+                | "dict" 
+                | "delta" 
+                | "lz4" 
+                | "zstd"
+compressed_data: BASE85_CHAR+
+
+checkpoint_marker: "◈◈" checkpoint_id "◈◈"  // Unique checkpoint markers
+checkpoint_id: /[0-9A-Fa-f]{8}/
+
+# ================================================================
+# SYMBOL CATEGORIES
+# ================================================================
+
+SYMBOL.20: NAMESPACED_SYMBOL_TOKEN
+          | CORE_SYMBOLS 
+          | TEMPORAL_SYMBOL 
+          | MODAL_SYMBOL 
+          | STRUCTURAL_SYMBOL 
+          | QUANTIFIER_SYMBOL
+          | EXTENDED_SYMBOL
+          | UNICODE_SYMBOL
+
+// High priority namespaced symbols to prevent tokenization issues
+NAMESPACED_SYMBOL_TOKEN.30: /⊨[∧∨¬→↔∀∃⊆⊇⊗∇∂∫∑∏]/
+UNICODE_SYMBOL: /[\u0080-\uFFFF]/  // Any unicode character not in basic ASCII
+
+TEMPORAL_SYMBOL: "◐" | "◑" | "◒" | "◓" | "◔" | "↑" | "↓" | "⫷" | "⧖"
+MODAL_SYMBOL: "♪" 
+            | "♦" 
+            | "♠" 
+            | "♣" 
+            | "♥" 
+            | "♤" 
+            | "♧" 
+            | "♡"
+
+STRUCTURAL_SYMBOL: "⟨" | "⟩" | "⟦" | "⟧" | "⌽"
+QUANTIFIER_SYMBOL: "⊨∀" 
+                  | "⊨∃" 
+                  | "⊨∄" 
+                  | "⊨∴" 
+                  | "⊨∵" 
+                  | "⊨∇" 
+                  | "⊨∂" 
+                  | "⊨∫"
+
+// Extended symbols for test compatibility (excluding namespace symbols)
+EXTENDED_SYMBOL: "⊃" | "∧" | "∨" | "→" | "↔" | "⊆" | "⊇" | "⊗"
+               | "ℕ" | "ℤ" | "ℚ" | "ℝ" | "ℂ" | "π" | "∞" | "α" | "β" | "γ" | "λ" | "μ" | "σ" | "Ω"
+               | "∇" | "∂" | "∫" | "∑" | "∏" | "√" | "≠" | "≤" | "≥"
+               | "⚡" | "🌍" | "🧠" | "💡" | "🔬" | "📊" | "🎯" | "🔄" | "⚖" | "🌟" | "🔑"
+
+# ================================================================
+# CORE SYMBOLS DEFINITION
+# ================================================================
+
+CORE_SYMBOLS: "§"    // Marks the beginning of a semantic statement
+            | "¶"    // Indicates a property relationship
+            | "∆"    // Indicates temporal information
+            | "≈"    // Indicates confidence level
+            | "◊"    // Indicates instance/type relationship
+            | "≡"    // Indicates equality
+            | "∈"    // Indicates set membership
+            | "⊂"    // Indicates subset relationship
+            | "∩"    // Set intersection
+            | "∪"    // Set union
+            | "⊕"    // Exclusive OR operation
+            | "⊖"    // Set difference or subtraction
+            | "⇝"    // Routing symbol for block-to-block navigation
+            | "◈"    // Checkpoint boundary marker (used as ◈◈)
+            | "∅"    // Null/empty value
+            | "¤"    // Compression marker symbol
+            | "♪"    // Musical mode marker
+            | "♦"    // Diamond mode marker
+            | "♠"    // Spade mode marker
+            | "♣"    // Club mode marker
+            | "♥"    // Heart mode marker
+            | "♤"    // Spade outline mode marker
+            | "♧"    // Club outline mode marker
+            | "♡"    // Heart outline mode marker
+            | ":"    // Colon punctuation
+            | "@"    // At symbol for relative anchoring
+            | "+"    // Plus sign
+            | "-"    // Minus sign
+            | "Z"    // UTC timezone marker
+            | "CRC"    // CRC checksum prefix
+            | "Int"    // Integer type
+            | "Float"    // Float type
+            | "String"    // String type
+            | "Bool"    // Boolean type
+            | "Entity"    // Entity type
+            | "Symbol"    // Symbol type
+            | "Time"    // Time type
+            | "Set"    // Set type constructor
+            | "List"    // List type constructor
+            | "A"    // Confidence level A (highest)
+            | "B"    // Confidence level B
+            | "C"    // Confidence level C
+            | "D"    // Confidence level D
+            | "E"    // Confidence level E
+            | "F"    // Confidence level F (lowest)
+            | "μs"    // Microseconds time unit
+            | "ms"    // Milliseconds time unit
+            | "s"    // Seconds time unit
+            | "m"    // Minutes time unit
+            | "h"    // Hours time unit
+            | "d"    // Days time unit
+            | "w"    // Weeks time unit
+            | "M"    // Months time unit
+            | "Y"    // Years time unit
+            | "decade"    // Decades time unit
+            | "century"    // Centuries time unit
+            | "conf"    // Confidence context keyword
+            | "src"    // Source context keyword
+            | "dom"    // Domain context keyword
+            | "measured"    // Measured confidence source
+            | "estimated"    // Estimated confidence source
+            | "assumed"    // Assumed confidence source
+            | "calculated"    // Calculated confidence source
+            | "consensus"    // Consensus confidence source
+            | "b85"    // Base85 compression
+            | "rle"    // Run-length encoding compression
+            | "dict"    // Dictionary compression
+            | "delta"    // Delta compression
+            | "lz4"    // LZ4 compression
+            | "zstd"    // Zstandard compression
+
+# ================================================================
+# LEXICAL RULES
+# ================================================================
+
+NEWLINE: /\r?\n/
+SPACE: /[ \t]/
+IDENTIFIER.5: /[a-zA-Z][a-zA-Z0-9_]*/  // High priority identifier terminal
+ALPHA: /[a-zA-Z]/
+DIGIT: /[0-9]/
+HEX_DIGIT: /[0-9A-Fa-f]/
+UNDERSCORE: "_"
+
+# Lark built-in terminals for common patterns
+ESCAPED_STRING: /("(?:[^"\\]|\\.)*")/
+SIGNED_NUMBER: /-?\d+(\.\d+)?([eE][+-]?\d+)?/
+
+# Unicode Character Classes
+UNICODE_CHAR: /[\u0000-\u10FFFF]/
+BASE85_CHAR: /[0-9A-Za-z!#$%&()*+\-;<=>?@^_`{|}~]/
+
+# ================================================================
+# BLOCK REFERENCES
+# ================================================================
+
+block_ref: entity_ref | block_address
+block_address: /[0-9A-Fa-f]{8}/
+
+checksum: crc_checksum
+
+# ================================================================
+# PARSER DIRECTIVES
+# ================================================================
+
+# Define custom whitespace handling
+WS_INLINE: /[ \t]+/
+%ignore WS_INLINE
+
+# Start rule
+start: nsml_document
+
+# ================================================================
+# EXAMPLES (as comments)
+# ================================================================
+
+# Multi-Domain Document Example:
+# [NSML:1.0.0:CRC12345678]
+# !ns{⊨:logic=1.0,τ:types=1.0,ψ:psych=1.0}
+# !sym{⊨∧:and,⊨∨:or,τ⟶:funcType,ψ⟹:stimulus}
+# !ent{A1:Aristotle,A2:Syllogism,A3:Human}
+# ---
+# §A1◊Philosopher¶era:"Ancient"
+# §A2⊨∧Logic∆◐-350
+# §A3ψ⟹"light"ψ⟸"pupil_contraction"≈E
+# §Logicτ⟶"Computation"≈B
+# ---
+# CRC12345678
+
+# ================================================================
+# END OF GRAMMAR
+# ================================================================ 

@@ -1,0 +1,41 @@
+# NSML Minimal Working Grammar - Test Version
+# Start with basic structure to ensure parsing works
+
+# ================================================================
+# BASIC DOCUMENT STRUCTURE
+# ================================================================
+
+start: nsml_document
+
+nsml_document: header_section separator data_section separator? checksum?
+
+header_section: version_line
+version_line: "[NSML:" version_num ":" crc_value "]"
+
+separator: "---"
+
+data_section: statement*
+statement: "§" entity operator value
+
+checksum: crc_value
+
+# ================================================================
+# BASIC TOKENS
+# ================================================================
+
+entity: IDENTIFIER
+operator: "◊" | "¶"
+value: STRING | IDENTIFIER | "⊤" | "⊥"
+
+version_num: /\d+\.\d+\.\d+/
+crc_value: /CRC[0-9A-Fa-f]+/
+
+IDENTIFIER: /[a-zA-Z][a-zA-Z0-9_]*/
+STRING: /"[^"]*"/
+
+# ================================================================
+# WHITESPACE
+# ================================================================
+
+%import common.WS
+%ignore WS 

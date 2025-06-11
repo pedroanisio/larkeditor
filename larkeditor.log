@@ -1,0 +1,397 @@
+2025-06-11 15:23:53,272 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:23:53,273 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:23:53,273 - app.main - INFO - Mounting static files...
+2025-06-11 15:23:53,273 - app.main - INFO - Setting up templates...
+2025-06-11 15:23:53,273 - app.main - INFO - Including API routers...
+2025-06-11 15:23:53,295 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:23:53,295 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:23:53,295 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:23:53,496 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:23:53,496 - app.main - INFO - Application shutdown complete
+2025-06-11 15:23:53,803 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:23:53,804 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:23:53,804 - app.main - INFO - Mounting static files...
+2025-06-11 15:23:53,804 - app.main - INFO - Setting up templates...
+2025-06-11 15:23:53,804 - app.main - INFO - Including API routers...
+2025-06-11 15:23:53,829 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:23:53,829 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:23:53,829 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:24:21,907 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:24:21,907 - app.main - INFO - Application shutdown complete
+2025-06-11 15:24:45,305 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:24:45,305 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:24:45,306 - app.main - INFO - Mounting static files...
+2025-06-11 15:24:45,306 - app.main - INFO - Setting up templates...
+2025-06-11 15:24:45,306 - app.main - INFO - Including API routers...
+2025-06-11 15:24:45,604 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:24:45,605 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:24:45,605 - app.main - INFO - Mounting static files...
+2025-06-11 15:24:45,605 - app.main - INFO - Setting up templates...
+2025-06-11 15:24:45,605 - app.main - INFO - Including API routers...
+2025-06-11 15:24:45,628 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:24:45,628 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:24:45,628 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:24:45,692 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:46,043 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:46,394 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:46,744 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:47,095 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:47,446 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:47,847 - watchfiles.main - DEBUG - 2 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/setup.py')}
+2025-06-11 15:24:48,036 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:24:48,036 - app.main - INFO - Application shutdown complete
+2025-06-11 15:24:48,348 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:24:48,348 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:24:48,348 - app.main - INFO - Mounting static files...
+2025-06-11 15:24:48,349 - app.main - INFO - Setting up templates...
+2025-06-11 15:24:48,349 - app.main - INFO - Including API routers...
+2025-06-11 15:24:48,372 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:24:48,372 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:24:48,372 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:24:48,391 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:48,742 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:49,092 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:49,443 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:49,794 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:50,144 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:50,495 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:50,846 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:51,197 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:51,547 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:51,898 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:52,249 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:52,599 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:52,950 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:53,301 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:53,652 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:54,002 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:54,353 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:54,704 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:55,055 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:55,405 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:55,756 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:56,107 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:56,458 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:56,808 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:57,159 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:57,510 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:57,860 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:58,211 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:58,562 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:58,913 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:59,263 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:59,614 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:24:59,964 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:00,316 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:00,666 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:01,017 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:01,368 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:01,718 - watchfiles.main - DEBUG - 2 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/app/core/parser.py')}
+2025-06-11 15:25:01,906 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:25:01,906 - app.main - INFO - Application shutdown complete
+2025-06-11 15:25:02,229 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:25:02,229 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:25:02,230 - app.main - INFO - Mounting static files...
+2025-06-11 15:25:02,230 - app.main - INFO - Setting up templates...
+2025-06-11 15:25:02,230 - app.main - INFO - Including API routers...
+2025-06-11 15:25:02,254 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:25:02,254 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:25:02,254 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:25:02,261 - watchfiles.main - DEBUG - 4 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.deleted: 3>, '/home/pals/code/grammar/larkeditor/app/core/__pycache__/parser.cpython-313.pyc.139865657694896'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/app/core/__pycache__/parser.cpython-313.pyc'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/app/core/__pycache__/parser.cpython-313.pyc.139865657694896')}
+2025-06-11 15:25:02,612 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:02,963 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:03,313 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:03,664 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:04,015 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:04,365 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:04,716 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:05,067 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:05,417 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:05,768 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:06,119 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:06,470 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:06,821 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:07,171 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:07,522 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:07,873 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:08,223 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:08,574 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:08,925 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:09,276 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:09,626 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:09,977 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:10,328 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:10,678 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:11,029 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:11,380 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:11,731 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:12,081 - watchfiles.main - DEBUG - 2 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/REMOVED_FILES.md')}
+2025-06-11 15:25:12,432 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:12,783 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:13,134 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:13,484 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:13,835 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:14,186 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:14,537 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:14,887 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:15,238 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:15,589 - watchfiles.main - DEBUG - 2 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/.git/FETCH_HEAD')}
+2025-06-11 15:25:15,939 - watchfiles.main - DEBUG - 4 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/.git/FETCH_HEAD'), (<Change.deleted: 3>, '/home/pals/code/grammar/larkeditor/.git/objects/maintenance.lock'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/.git/objects/maintenance.lock')}
+2025-06-11 15:25:16,290 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:16,641 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:16,991 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:17,342 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:17,693 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:18,043 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:18,394 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:18,745 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:19,096 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:19,447 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:19,797 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:20,148 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:20,499 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:20,850 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:21,201 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:21,551 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:21,902 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:22,253 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:22,604 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:22,954 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:23,305 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:23,656 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:24,006 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:24,357 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:24,708 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:25,059 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:25,409 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:25,760 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:26,111 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:26,462 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:26,813 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:27,163 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:27,380 - app.main - DEBUG - Serving main editor interface
+2025-06-11 15:25:27,514 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:27,865 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:28,216 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:28,566 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:28,917 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:29,268 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:29,619 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:29,969 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:30,321 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:30,672 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:31,023 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:31,374 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:31,725 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:32,076 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:32,426 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:32,777 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:33,128 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:33,479 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:33,829 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:34,181 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:34,531 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:34,882 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:35,233 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:35,584 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:35,935 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:36,286 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:36,636 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:36,987 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:37,338 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:37,688 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:38,039 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:38,390 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:38,741 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:39,092 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:39,443 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:39,794 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:40,145 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:40,496 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:40,846 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:41,197 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:41,548 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:41,899 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:42,249 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:42,600 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:42,951 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:43,302 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:43,653 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:44,003 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:44,354 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:44,705 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:45,055 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:45,406 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:45,757 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:46,108 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:46,458 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:46,809 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:47,160 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:47,511 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:47,862 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:48,213 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:48,563 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:48,914 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:49,265 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:49,616 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:49,967 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:50,317 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:50,668 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:51,019 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:51,369 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:51,720 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:52,071 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:52,422 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:52,773 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:53,124 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:53,474 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:53,825 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:54,175 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:54,526 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:54,877 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:55,228 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:55,578 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:55,929 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:56,280 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:56,631 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:56,981 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:57,333 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:57,684 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:58,034 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:58,385 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:58,736 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:59,087 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:59,439 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:25:59,789 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:00,141 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:00,491 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:00,842 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:01,193 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:01,544 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:01,895 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:02,245 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:02,596 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:02,947 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:03,298 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:03,648 - watchfiles.main - DEBUG - 2 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/app/websockets/parsing_ws.py')}
+2025-06-11 15:26:03,809 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:26:03,810 - app.main - INFO - Application shutdown complete
+2025-06-11 15:26:04,118 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:26:04,118 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:26:04,119 - app.main - INFO - Mounting static files...
+2025-06-11 15:26:04,119 - app.main - INFO - Setting up templates...
+2025-06-11 15:26:04,119 - app.main - INFO - Including API routers...
+2025-06-11 15:26:04,141 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:26:04,141 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:26:04,141 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:26:04,215 - watchfiles.main - DEBUG - 4 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/app/websockets/__pycache__/parsing_ws.cpython-313.pyc'), (<Change.deleted: 3>, '/home/pals/code/grammar/larkeditor/app/websockets/__pycache__/parsing_ws.cpython-313.pyc.140655694037904'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/app/websockets/__pycache__/parsing_ws.cpython-313.pyc.140655694037904')}
+2025-06-11 15:26:04,566 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:04,751 - app.websocket - INFO - New WebSocket connection from 127.0.0.1
+2025-06-11 15:26:04,751 - app.websocket - DEBUG - Waiting for WebSocket message...
+2025-06-11 15:26:04,917 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:05,267 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:05,618 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:05,969 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:06,320 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:06,670 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:07,021 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:07,372 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:07,723 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:08,073 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:08,424 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:08,775 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:09,126 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:09,478 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:09,829 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:10,180 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:10,531 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:10,881 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:11,232 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:11,583 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:11,933 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:12,284 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:12,635 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:12,986 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:13,337 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:13,687 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:14,038 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:14,389 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:14,739 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:15,090 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:15,441 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:15,792 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:16,142 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:16,493 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:16,844 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:17,195 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:17,545 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:17,897 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:18,247 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:18,598 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:18,949 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:19,300 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:19,651 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:20,001 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:20,352 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:20,703 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:21,053 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:21,404 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:21,755 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:22,105 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:22,456 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:22,807 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:23,158 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:23,508 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:23,859 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:24,210 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:24,561 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:24,911 - watchfiles.main - DEBUG - 2 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/app/api/parsing.py'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:24,998 - app.websocket - INFO - WebSocket disconnected for session unknown after 0 messages
+2025-06-11 15:26:25,099 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:26:25,099 - app.main - INFO - Application shutdown complete
+2025-06-11 15:26:25,406 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:26:25,406 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:26:25,406 - app.main - INFO - Mounting static files...
+2025-06-11 15:26:25,407 - app.main - INFO - Setting up templates...
+2025-06-11 15:26:25,407 - app.main - INFO - Including API routers...
+2025-06-11 15:26:25,430 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:26:25,430 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:26:25,430 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:26:25,455 - watchfiles.main - DEBUG - 5 changes detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/app/api/__pycache__/parsing.cpython-313.pyc'), (<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/app/api/parsing.py'), (<Change.deleted: 3>, '/home/pals/code/grammar/larkeditor/app/api/__pycache__/parsing.cpython-313.pyc.140046302997808'), (<Change.added: 1>, '/home/pals/code/grammar/larkeditor/app/api/__pycache__/parsing.cpython-313.pyc.140046302997808')}
+2025-06-11 15:26:25,631 - app.main - INFO - Shutting down LarkEditor Web application...
+2025-06-11 15:26:25,631 - app.main - INFO - Application shutdown complete
+2025-06-11 15:26:25,932 - app.main - INFO - Starting LarkEditor Web application...
+2025-06-11 15:26:25,932 - app.main - DEBUG - Settings: host=127.0.0.1, port=8000, debug=True
+2025-06-11 15:26:25,932 - app.main - INFO - Mounting static files...
+2025-06-11 15:26:25,932 - app.main - INFO - Setting up templates...
+2025-06-11 15:26:25,932 - app.main - INFO - Including API routers...
+2025-06-11 15:26:25,956 - app.main - INFO - LarkEditor Web application started successfully
+2025-06-11 15:26:25,957 - app.main - INFO - Available at: http://127.0.0.1:8000
+2025-06-11 15:26:25,957 - app.main - INFO - API docs at: http://127.0.0.1:8000/api/docs
+2025-06-11 15:26:25,987 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:26,053 - app.websocket - INFO - New WebSocket connection from 127.0.0.1
+2025-06-11 15:26:26,054 - app.websocket - DEBUG - Waiting for WebSocket message...
+2025-06-11 15:26:26,338 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:26,689 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:27,039 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:27,390 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:27,741 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:28,091 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:28,442 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:28,793 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:29,144 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:29,495 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:29,845 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:30,196 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:30,547 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:30,898 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:31,249 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:31,599 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:31,950 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:32,301 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:32,651 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:33,002 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:33,353 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:33,703 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:34,054 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}
+2025-06-11 15:26:34,405 - watchfiles.main - DEBUG - 1 change detected: {(<Change.modified: 2>, '/home/pals/code/grammar/larkeditor/larkeditor.log')}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LarkEditor Web - EBNF Grammar Editor</title>
+    
+    <!-- Monaco Editor -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/static/css/editor.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="title">
+                    <span class="logo">🌳</span>
+                    LarkEditor Web
+                </h1>
+                <div class="session-info">
+                    <span id="session-status" class="status-indicator">●</span>
+                    <span id="session-id" class="session-id">Connecting...</span>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <!-- Parser settings -->
+                <div class="settings-group">
+                    <label for="parser-type">Parser:</label>
+                    <select id="parser-type" class="select">
+                        <option value="earley">Earley</option>
+                        <option value="lalr">LALR</option>
+                        <option value="cyk">CYK</option>
+                    </select>
+                    
+                    <label for="start-rule">Start:</label>
+                    <input type="text" id="start-rule" class="input" value="start" placeholder="start">
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="debug-mode"> Debug
+                    </label>
+                </div>
+                
+                <!-- Action buttons -->
+                <div class="button-group">
+                    <button id="force-parse" class="btn btn-primary" title="Force Parse (Ctrl+Enter)">
+                        ⚡ Parse
+                    </button>
+                    <button id="upload-grammar" class="btn btn-secondary" title="Upload Grammar File">
+                        📁 Upload
+                    </button>
+                    <button id="download-grammar" class="btn btn-secondary" title="Download Grammar">
+                        💾 Download
+                    </button>
+                    <button id="export-results" class="btn btn-secondary" title="Export Results">
+                        📤 Export
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main content area -->
+        <main class="main-content">
+            <!-- Left panel: Grammar editor -->
+            <div class="panel grammar-panel">
+                <div class="panel-header">
+                    <h2>Grammar</h2>
+                    <div class="panel-info">
+                        <span id="grammar-lines">0 lines</span>
+                        <span id="grammar-status" class="status-text">Ready</span>
+                    </div>
+                </div>
+                <div id="grammar-editor" class="editor-container"></div>
+            </div>
+            
+            <!-- Middle panel: Test input -->
+            <div class="panel text-panel">
+                <div class="panel-header">
+                    <h2>Test Input</h2>
+                    <div class="panel-info">
+                        <span id="text-lines">0 lines</span>
+                        <button id="upload-text" class="btn-icon" title="Upload Text File">📁</button>
+                    </div>
+                </div>
+                <div id="text-editor" class="editor-container"></div>
+            </div>
+            
+            <!-- Right panel: Parse results -->
+            <div class="panel results-panel">
+                <div class="panel-header">
+                    <h2>Parse Results</h2>
+                    <div class="panel-info">
+                        <span id="parse-status" class="status-text">No results</span>
+                        <span id="parse-time" class="time-text">-</span>
+                    </div>
+                </div>
+                <div class="results-container">
+                    <!-- AST Tree view -->
+                    <div id="ast-tree" class="ast-tree"></div>
+                    
+                    <!-- Error display -->
+                    <div id="error-display" class="error-display hidden">
+                        <div class="error-header">
+                            <span id="error-type" class="error-type"></span>
+                            <span id="error-location" class="error-location"></span>
+                        </div>
+                        <div id="error-message" class="error-message"></div>
+                        <div id="error-suggestions" class="error-suggestions"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Status bar -->
+        <footer class="status-bar">
+            <div class="status-left">
+                <span id="connection-status" class="connection-status">●</span>
+                <span id="status-text">Ready</span>
+            </div>
+            <div class="status-right">
+                <span id="performance-info"></span>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Hidden file inputs -->
+    <input type="file" id="grammar-file-input" accept=".lark,.ebnf,.txt" style="display: none;">
+    <input type="file" id="text-file-input" accept=".txt" style="display: none;">
+    
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Parsing grammar...</div>
+    </div>
+    
+    <!-- JavaScript modules -->
+    <script type="module" src="/static/js/editor-manager.js"></script>
+    <script type="module" src="/static/js/websocket-client.js"></script>
+    <script type="module" src="/static/js/file-manager.js"></script>
+    <script type="module" src="/static/js/ast-renderer.js"></script>
+    <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>
