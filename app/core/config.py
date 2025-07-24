@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     """Application settings."""
     
     # Server settings
-    host: str = "127.0.0.1"
+    host: str = "0.0.0.0"  # Bind to all interfaces
     port: int = 8000
     debug: bool = True
     
@@ -68,9 +68,13 @@ def setup_logging(settings: Settings):
         file_handler.setFormatter(formatter)
         root_logger.addHandler(file_handler)
     
-    # Set specific logger levels
+    # Set specific logger levels to avoid noise
     logging.getLogger("uvicorn").setLevel(logging.INFO)
     logging.getLogger("uvicorn.access").setLevel(logging.INFO)
+    
+    # Filter out noisy development server logs
+    logging.getLogger("watchfiles").setLevel(logging.WARNING)
+    logging.getLogger("watchfiles.main").setLevel(logging.WARNING)
     
     # Application loggers
     logging.getLogger("app").setLevel(getattr(logging, settings.log_level.upper()))

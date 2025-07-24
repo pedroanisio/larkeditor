@@ -30,10 +30,11 @@ export class WebSocketClient {
                 const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
                 const wsUrl = `${protocol}//${window.location.host}/ws/parsing`;
                 
+                console.log(`Connecting to WebSocket: ${wsUrl}`);
                 this.socket = new WebSocket(wsUrl);
                 
                 this.socket.onopen = () => {
-                    console.log('WebSocket connected');
+                    console.log('WebSocket connected successfully');
                     this.reconnectAttempts = 0;
                     
                     if (this.onConnectCallback) {
@@ -48,24 +49,32 @@ export class WebSocketClient {
                 };
                 
                 this.socket.onclose = (event) => {
-                    console.log('WebSocket disconnected:', event.code, event.reason);
+                    console.log(`WebSocket disconnected: ${event.code} ${event.reason || '(no reason)'}`);
                     
                     if (this.onDisconnectCallback) {
                         this.onDisconnectCallback();
                     }
                     
-                    // Attempt reconnection if not a clean close
-                    if (event.code !== 1000 && this.reconnectAttempts < this.maxReconnectAttempts) {
+                    // Attempt reconnection for specific error codes
+                    const shouldReconnect = event.code !== 1000 && // Not normal closure
+                                          event.code !== 1001 && // Not going away
+                                          this.reconnectAttempts < this.maxReconnectAttempts;
+                    
+                    if (shouldReconnect) {
+                        console.log(`Will attempt reconnection (code: ${event.code})`);
                         this.scheduleReconnect();
+                    } else {
+                        console.log(`Not reconnecting (code: ${event.code}, attempts: ${this.reconnectAttempts})`);
                     }
                 };
                 
                 this.socket.onerror = (error) => {
                     console.error('WebSocket error:', error);
-                    reject(error);
+                    // Don't reject immediately - let onclose handle it
                 };
                 
             } catch (error) {
+                console.error('Failed to create WebSocket:', error);
                 reject(error);
             }
         });

@@ -3,6 +3,7 @@
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
 
 from .api import parsing, files, health
 from .websockets import parsing_ws
@@ -22,6 +23,15 @@ app = FastAPI(
     version="2.0.0",
     docs_url="/api/docs",
     redoc_url="/api/redoc"
+)
+
+# Add CORS middleware for WebSocket and API access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, be more specific
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Mount static files

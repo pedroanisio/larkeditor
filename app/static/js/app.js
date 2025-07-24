@@ -19,6 +19,12 @@ class LarkEditorApp {
         this.fileManager = new FileManager();
         this.astRenderer = new ASTRenderer();
         
+        // Onboarding state
+        this.currentOnboardingStep = 1;
+        this.onboardingEnabled = !localStorage.getItem('larkeditor-onboarding-disabled');
+        this.onboardingShown = false;
+        this.connectionTimeout = null;
+        
         // Bind event handlers
         this.bindEvents();
         
@@ -39,13 +45,18 @@ class LarkEditorApp {
             await this.editorManager.init();
             
             // Connect WebSocket
+            console.log('Attempting WebSocket connection...');
             await this.websocketClient.connect(this.sessionId);
+            console.log('WebSocket connection attempt completed');
             
             // Setup editor event handlers
             this.setupEditorHandlers();
             
             // Setup WebSocket event handlers
             this.setupWebSocketHandlers();
+            
+            // Setup drag & drop for file uploads
+            this.setupDragAndDrop();
             
             // Update status
             this.updateStatus('Ready');
@@ -99,12 +110,66 @@ class LarkEditorApp {
             this.exportResults();
         });
         
+        document.getElementById('help-button').addEventListener('click', () => {
+            this.showOnboardingManual();
+        });
+        
         // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && e.key === 'Enter') {
                 e.preventDefault();
                 this.forceParse();
             }
+        });
+        
+        // Onboarding event handlers
+        this.bindOnboardingEvents();
+    }
+    
+    bindOnboardingEvents() {
+        // Navigation buttons
+        document.getElementById('onboarding-next')?.addEventListener('click', () => {
+            this.nextOnboardingStep();
+        });
+        
+        document.getElementById('onboarding-next-2')?.addEventListener('click', () => {
+            this.nextOnboardingStep();
+        });
+        
+        document.getElementById('onboarding-next-3')?.addEventListener('click', () => {
+            this.nextOnboardingStep();
+        });
+        
+        document.getElementById('onboarding-prev')?.addEventListener('click', () => {
+            this.prevOnboardingStep();
+        });
+        
+        document.getElementById('onboarding-prev-2')?.addEventListener('click', () => {
+            this.prevOnboardingStep();
+        });
+        
+        document.getElementById('onboarding-prev-3')?.addEventListener('click', () => {
+            this.prevOnboardingStep();
+        });
+        
+        // Close and finish buttons
+        document.getElementById('onboarding-close')?.addEventListener('click', () => {
+            this.closeOnboarding();
+        });
+        
+        document.getElementById('skip-onboarding')?.addEventListener('click', () => {
+            this.closeOnboarding();
+        });
+        
+        document.getElementById('onboarding-finish')?.addEventListener('click', () => {
+            this.finishOnboarding();
+        });
+        
+        // Step indicators
+        document.querySelectorAll('.step-dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                this.goToOnboardingStep(index + 1);
+            });
         });
     }
     
@@ -124,15 +189,37 @@ class LarkEditorApp {
     
     setupWebSocketHandlers() {
         this.websocketClient.onConnect(() => {
+            console.log('WebSocket connected successfully');
             this.isConnected = true;
             this.updateConnectionStatus(true);
             this.updateStatus('Connected', 'success');
+            
+            // Clear any existing connection timeout
+            if (this.connectionTimeout) {
+                clearTimeout(this.connectionTimeout);
+                this.connectionTimeout = null;
+            }
+            
+            // Show onboarding wizard for first-time users (only once)
+            if (this.onboardingEnabled && !this.onboardingShown) {
+                this.onboardingShown = true;
+                setTimeout(() => {
+                    this.checkAndShowOnboarding();
+                }, 1000); // Delay to ensure editors are ready
+            }
         });
         
         this.websocketClient.onDisconnect(() => {
-            this.isConnected = false;
-            this.updateConnectionStatus(false);
-            this.updateStatus('Disconnected', 'error');
+            console.log('WebSocket disconnected, updating UI status');
+            
+            // Use a small delay before marking as disconnected to handle rapid reconnects
+            this.connectionTimeout = setTimeout(() => {
+                if (!this.websocketClient.isConnected()) {
+                    this.isConnected = false;
+                    this.updateConnectionStatus(false);
+                    this.updateStatus('Disconnected - Reconnecting...', 'warning');
+                }
+            }, 500);
         });
         
         this.websocketClient.onParseResult((result) => {
@@ -150,6 +237,69 @@ class LarkEditorApp {
         this.websocketClient.onError((error) => {
             console.error('WebSocket error:', error);
             this.updateStatus(`Error: ${error.error}`, 'error');
+        });
+    }
+    
+    setupDragAndDrop() {
+        // Connect drag & drop to editors
+        const grammarEditorElement = document.getElementById('grammar-editor');
+        const textEditorElement = document.getElementById('text-editor');
+        
+        // Setup drag & drop for grammar editor
+        this.setupElementDragAndDrop(grammarEditorElement, (content, filename) => {
+            this.editorManager.setGrammarContent(content);
+            this.updateStatus(`Loaded grammar: ${filename}`, 'success');
+        }, ['.lark', '.ebnf', '.txt']);
+        
+        // Setup drag & drop for text editor
+        this.setupElementDragAndDrop(textEditorElement, (content, filename) => {
+            this.editorManager.setTextContent(content);
+            this.updateStatus(`Loaded text: ${filename}`, 'success');
+        }, ['.txt']);
+    }
+    
+    setupElementDragAndDrop(element, callback, allowedExtensions) {
+        if (!element) return;
+        
+        element.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            element.classList.add('drag-over');
+        });
+        
+        element.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            element.classList.remove('drag-over');
+        });
+        
+        element.addEventListener('drop', (e) => {
+            e.preventDefault();
+            element.classList.remove('drag-over');
+            
+            const files = Array.from(e.dataTransfer.files);
+            const file = files[0];
+            
+            if (file) {
+                // Validate file extension
+                const isValidExtension = allowedExtensions.some(ext => 
+                    file.name.toLowerCase().endsWith(ext)
+                );
+                
+                if (isValidExtension && file.size <= 10 * 1024 * 1024) { // 10MB limit
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        callback(e.target.result, file.name);
+                    };
+                    reader.onerror = () => {
+                        this.updateStatus('Failed to read file', 'error');
+                    };
+                    reader.readAsText(file);
+                } else {
+                    const message = !isValidExtension 
+                        ? `Invalid file type. Allowed: ${allowedExtensions.join(', ')}`
+                        : 'File too large (max 10MB)';
+                    this.updateStatus(message, 'error');
+                }
+            }
         });
     }
     
@@ -173,10 +323,46 @@ class LarkEditorApp {
     }
     
     forceParse() {
-        if (!this.isConnected) return;
+        const wsConnected = this.websocketClient.isConnected();
+        console.log('Force parse triggered, WebSocket state:', this.websocketClient.getReadyState(), 'App connected:', this.isConnected, 'WS connected:', wsConnected);
+        
+        if (!wsConnected) {
+            this.updateStatus('WebSocket not connected - please wait...', 'warning');
+            console.warn('WebSocket not ready, connection state:', this.websocketClient.getReadyState());
+            
+            // Try to reconnect if possible
+            if (!this.isConnected) {
+                this.updateStatus('Reconnecting...', 'warning');
+                setTimeout(() => {
+                    if (this.websocketClient.isConnected()) {
+                        console.log('Retrying parse after reconnection');
+                        this.forceParse();
+                    }
+                }, 2000);
+            }
+            return;
+        }
         
         this.showLoading(true);
-        this.websocketClient.send('force_parse', {});
+        console.log('Sending force_parse message via WebSocket');
+        const sent = this.websocketClient.send('force_parse', {});
+        
+        if (!sent) {
+            this.showLoading(false);
+            this.updateStatus('Failed to send parse request', 'error');
+            console.error('Failed to send WebSocket message');
+        } else {
+            console.log('Force parse message sent successfully');
+            
+            // Add a timeout in case we don't get a response
+            setTimeout(() => {
+                if (document.getElementById('loading-overlay').classList.contains('hidden')) {
+                    return; // Already got response
+                }
+                this.showLoading(false);
+                this.updateStatus('Parse timeout - no response from server', 'error');
+            }, 10000); // 10 second timeout
+        }
     }
     
     handleParseResult(result) {
@@ -324,9 +510,153 @@ class LarkEditorApp {
             this.updateStatus('Export failed', 'error');
         }
     }
+    
+    // Onboarding Methods
+    checkAndShowOnboarding() {
+        if (this.onboardingEnabled) {
+            console.log('Showing onboarding wizard for first-time user');
+            this.showOnboarding();
+            this.setDefaultExampleContent();
+        }
+    }
+    
+    showOnboarding() {
+        document.getElementById('onboarding-overlay').classList.remove('hidden');
+        this.goToOnboardingStep(1);
+    }
+    
+    closeOnboarding() {
+        const disableCheckbox = document.getElementById('disable-onboarding');
+        if (disableCheckbox.checked) {
+            localStorage.setItem('larkeditor-onboarding-disabled', 'true');
+            this.onboardingEnabled = false;
+        }
+        document.getElementById('onboarding-overlay').classList.add('hidden');
+    }
+    
+    finishOnboarding() {
+        console.log('Onboarding completed successfully');
+        this.closeOnboarding();
+        
+        // Trigger a parse to demonstrate the result
+        setTimeout(() => {
+            this.forceParse();
+        }, 500);
+    }
+    
+    nextOnboardingStep() {
+        if (this.currentOnboardingStep < 4) {
+            this.goToOnboardingStep(this.currentOnboardingStep + 1);
+        }
+    }
+    
+    prevOnboardingStep() {
+        if (this.currentOnboardingStep > 1) {
+            this.goToOnboardingStep(this.currentOnboardingStep - 1);
+        }
+    }
+    
+    goToOnboardingStep(step) {
+        // Hide all steps
+        document.querySelectorAll('.onboarding-step').forEach(s => s.classList.add('hidden'));
+        
+        // Show target step
+        document.getElementById(`step-${step}`)?.classList.remove('hidden');
+        
+        // Update step indicators
+        document.querySelectorAll('.step-dot').forEach((dot, index) => {
+            if (index + 1 === step) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        this.currentOnboardingStep = step;
+        
+        // Perform step-specific actions
+        this.performStepActions(step);
+    }
+    
+    performStepActions(step) {
+        switch (step) {
+            case 1:
+                // Highlight the grammar editor
+                this.highlightElement('grammar-editor', 2000);
+                break;
+            case 2:
+                // Highlight the text editor
+                this.highlightElement('text-editor', 2000);
+                break;
+            case 3:
+                // Highlight the parse button
+                this.highlightElement('force-parse', 3000);
+                break;
+            case 4:
+                // No specific highlighting for feature overview
+                break;
+        }
+    }
+    
+    highlightElement(elementId, duration = 2000) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        element.style.boxShadow = '0 0 0 3px rgba(33, 150, 243, 0.5)';
+        element.style.transition = 'box-shadow 0.3s ease';
+        
+        setTimeout(() => {
+            element.style.boxShadow = '';
+        }, duration);
+    }
+    
+    setDefaultExampleContent() {
+        // Set example grammar
+        const exampleGrammar = `// Simple arithmetic grammar
+start: expr
+
+?expr: term
+     | expr "+" term   -> add
+     | expr "-" term   -> sub
+
+?term: factor
+     | term "*" factor -> mul  
+     | term "/" factor -> div
+
+?factor: NUMBER
+       | "(" expr ")"
+
+%import common.NUMBER
+%import common.WS
+%ignore WS`;
+
+        // Set example text
+        const exampleText = `2 + 3 * (4 - 1)`;
+        
+        // Apply to editors when they're ready
+        setTimeout(() => {
+            if (this.editorManager) {
+                console.log('Setting example content for onboarding');
+                this.editorManager.setGrammarContent(exampleGrammar);
+                this.editorManager.setTextContent(exampleText);
+            }
+        }, 1000);
+    }
+    
+    // Method to manually show onboarding (for debugging or re-enabling)
+    showOnboardingManual() {
+        this.onboardingEnabled = true;
+        localStorage.removeItem('larkeditor-onboarding-disabled');
+        this.showOnboarding();
+    }
 }
 
 // Initialize application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.larkEditor = new LarkEditorApp();
+    
+    // Add global method to re-enable onboarding (for debugging)
+    window.showOnboarding = () => {
+        window.larkEditor.showOnboardingManual();
+    };
 });

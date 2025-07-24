@@ -148,7 +148,13 @@ async def websocket_parsing_endpoint(websocket: WebSocket):
     client_host = websocket.client.host if websocket.client else "unknown"
     logger.info(f"New WebSocket connection from {client_host}")
     
-    await websocket.accept()
+    try:
+        await websocket.accept()
+        logger.info(f"WebSocket connection accepted for {client_host}")
+    except Exception as e:
+        logger.error(f"Failed to accept WebSocket connection: {e}")
+        return
+        
     session_manager = get_session_manager()
     current_session_id: Optional[str] = None
     message_count = 0
@@ -249,33 +255,58 @@ async def websocket_parsing_endpoint(websocket: WebSocket):
                     logger.info(f"Force parse requested for session {message.session_id[:8]}...")
                     # Force immediate parsing
                     if session.grammar_content and session.text_content:
-                        # Cancel any existing debounced parsing
-                        if message.session_id in parse_manager.parse_timers:
-                            parse_manager.parse_timers[message.session_id].cancel()
-                            logger.debug("Cancelled existing debounced parse")
-                        
-                        # Parse immediately
-                        logger.debug("Executing immediate parse...")
-                        parser = get_parser()
-                        result = await parser.parse_async(
-                            session.grammar_content,
-                            session.text_content,
-                            session.parse_settings
-                        )
-                        
-                        session.last_parse_result = result
-                        
-                        # Send result
-                        response = {
-                            "type": WSMessageType.PARSE_RESULT,
+                        try:
+                            # Cancel any existing debounced parsing
+                            if message.session_id in parse_manager.parse_timers:
+                                parse_manager.parse_timers[message.session_id].cancel()
+                                logger.debug("Cancelled existing debounced parse")
+                            
+                            # Parse immediately
+                            logger.debug("Executing immediate parse...")
+                            parser = get_parser()
+                            result = await parser.parse_async(
+                                session.grammar_content,
+                                session.text_content,
+                                session.parse_settings
+                            )
+                            
+                            session.last_parse_result = result
+                            
+                            # Send result
+                            response = {
+                                "type": WSMessageType.PARSE_RESULT,
+                                "session_id": message.session_id,
+                                "timestamp": datetime.now().isoformat(),
+                                "data": result.dict()
+                            }
+                            logger.info(f"Sending immediate parse result (status: {result.status})")
+                            await websocket.send_json(response)
+                            
+                        except Exception as parse_error:
+                            logger.error(f"Force parse failed: {str(parse_error)}")
+                            error_response = {
+                                "type": WSMessageType.PARSE_ERROR,
+                                "session_id": message.session_id,
+                                "timestamp": datetime.now().isoformat(),
+                                "data": {
+                                    "error": f"Parse failed: {str(parse_error)}",
+                                    "error_type": "force_parse_error"
+                                }
+                            }
+                            await websocket.send_json(error_response)
+                    else:
+                        logger.warning(f"Force parse requested but missing content - grammar: {bool(session.grammar_content)}, text: {bool(session.text_content)}")
+                        # Send error response for missing content
+                        error_response = {
+                            "type": WSMessageType.PARSE_ERROR,
                             "session_id": message.session_id,
                             "timestamp": datetime.now().isoformat(),
-                            "data": result.dict()
+                            "data": {
+                                "error": "Cannot parse: missing grammar or text content",
+                                "error_type": "missing_content"
+                            }
                         }
-                        logger.info(f"Sending immediate parse result (status: {result.status})")
-                        await websocket.send_json(response)
-                    else:
-                        logger.warning("Force parse requested but missing grammar or text content")
+                        await websocket.send_json(error_response)
                 
                 # Send session info
                 session_info = {

@@ -61,6 +61,9 @@
                     <button id="export-results" class="btn btn-secondary" title="Export Results">
                         📤 Export
                     </button>
+                    <button id="help-button" class="btn btn-secondary" title="Show Help & Tutorial">
+                        ❓ Help
+                    </button>
                 </div>
             </div>
         </header>
@@ -137,6 +140,86 @@
     <div id="loading-overlay" class="loading-overlay hidden">
         <div class="loading-spinner"></div>
         <div class="loading-text">Parsing grammar...</div>
+    </div>
+    
+    <!-- Onboarding Wizard -->
+    <div id="onboarding-overlay" class="onboarding-overlay hidden">
+        <div class="onboarding-modal">
+            <div class="onboarding-header">
+                <h2>Welcome to LarkEditor Web! 🌳</h2>
+                <button id="onboarding-close" class="onboarding-close" title="Close (you can re-enable in settings)">×</button>
+            </div>
+            
+            <div class="onboarding-content">
+                <div class="onboarding-step" id="step-1">
+                    <div class="step-icon">📝</div>
+                    <h3>Step 1: Write Your Grammar</h3>
+                    <p>Start by writing a Lark grammar in the <strong>Grammar</strong> panel on the left. We've added a simple example to get you started!</p>
+                    <div class="step-example">
+                        <code>start: expr<br>expr: NUMBER<br>%import common.NUMBER</code>
+                    </div>
+                    <div class="step-actions">
+                        <button id="skip-onboarding" class="btn-ghost">Skip Tutorial</button>
+                        <button id="onboarding-next" class="btn-primary">Next →</button>
+                    </div>
+                </div>
+                
+                <div class="onboarding-step hidden" id="step-2">
+                    <div class="step-icon">🔤</div>
+                    <h3>Step 2: Add Test Input</h3>
+                    <p>Enter some text to parse in the <strong>Text Input</strong> panel (middle). This will be parsed using your grammar.</p>
+                    <div class="step-example">
+                        <code>42</code>
+                    </div>
+                    <div class="step-actions">
+                        <button id="onboarding-prev" class="btn-ghost">← Previous</button>
+                        <button id="onboarding-next-2" class="btn-primary">Next →</button>
+                    </div>
+                </div>
+                
+                <div class="onboarding-step hidden" id="step-3">
+                    <div class="step-icon">⚡</div>
+                    <h3>Step 3: Parse Your Grammar</h3>
+                    <p>Click the <strong>⚡ Parse</strong> button or press <kbd>Ctrl+Enter</kbd> to see the Abstract Syntax Tree (AST) in the right panel.</p>
+                    <div class="step-highlight">
+                        The parser will automatically run when you edit your grammar or text, but you can force immediate parsing with the Parse button.
+                    </div>
+                    <div class="step-actions">
+                        <button id="onboarding-prev-2" class="btn-ghost">← Previous</button>
+                        <button id="onboarding-next-3" class="btn-primary">Next →</button>
+                    </div>
+                </div>
+                
+                <div class="onboarding-step hidden" id="step-4">
+                    <div class="step-icon">🎯</div>
+                    <h3>Step 4: Explore Features</h3>
+                    <p>Try these advanced features:</p>
+                    <ul class="feature-list">
+                        <li><strong>📁 Upload/Download</strong> - Load grammar files from your computer</li>
+                        <li><strong>🔧 Parser Settings</strong> - Change parser type (Earley, LALR, CYK)</li>
+                        <li><strong>🌳 AST Tree</strong> - Click to expand/collapse tree nodes</li>
+                        <li><strong>📤 Export</strong> - Export results as JSON, XML, or DOT</li>
+                        <li><strong>🎯 Drag & Drop</strong> - Drop files directly onto editor panels</li>
+                    </ul>
+                    <div class="step-actions">
+                        <button id="onboarding-prev-3" class="btn-ghost">← Previous</button>
+                        <button id="onboarding-finish" class="btn-primary">Start Editing! 🚀</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="onboarding-footer">
+                <div class="step-indicators">
+                    <span class="step-dot active" data-step="1"></span>
+                    <span class="step-dot" data-step="2"></span>
+                    <span class="step-dot" data-step="3"></span>
+                    <span class="step-dot" data-step="4"></span>
+                </div>
+                <label class="disable-onboarding">
+                    <input type="checkbox" id="disable-onboarding"> Don't show this again
+                </label>
+            </div>
+        </div>
     </div>
     
     <!-- JavaScript modules -->

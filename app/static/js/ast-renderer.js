@@ -228,13 +228,14 @@ export class ASTRenderer {
             xml += `${indent}</tree>\\n`;
             return xml;
         } else {
-            return `${indent}<token data="${this.escapeXML(node.data)}"`;
+            let xml = `${indent}<token data="${this.escapeXML(node.data)}"`;
             
             if (node.line !== null && node.column !== null) {
-                return xml + ` line="${node.line}" column="${node.column}" />\\n`;
+                xml += ` line="${node.line}" column="${node.column}" />\\n`;
             } else {
-                return xml + ` />\\n`;
+                xml += ` />\\n`;
             }
+            return xml;
         }
     }
     

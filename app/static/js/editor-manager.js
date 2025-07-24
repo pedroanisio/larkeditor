@@ -258,8 +258,8 @@ export class EditorManager {
     }
     
     getDefaultGrammar() {
-        return `// Lark Grammar Example
-// Define your grammar rules here
+        return `// Welcome to LarkEditor Web! 🌳
+// This is a simple arithmetic grammar to get you started
 
 start: expr
 
@@ -276,14 +276,14 @@ start: expr
 
 %import common.NUMBER
 %import common.WS
-%ignore WS`;
+%ignore WS
+
+// Try parsing: 2 + 3 * (4 - 1)
+// Click the ⚡ Parse button or press Ctrl+Enter`;
     }
     
     getDefaultText() {
-        return `// Test input for your grammar
-// Enter text to parse here
-
-2 + 3 * (4 - 1)`;
+        return `2 + 3 * (4 - 1)`;
     }
     
     onGrammarChange(callback) {
